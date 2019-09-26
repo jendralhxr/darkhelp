@@ -1,0 +1,48 @@
+/** @page Tool %DarkHelp Tool
+
+The %DarkHelp library also comes with a tool that uses the %DarkHelp C++ API and shows the results on the screen.
+
+@image html DarkHelp.png
+
+You can load a neural network and browse through a large set of images as you examine the results of calling @ref DarkHelp::predict() and @ref DarkHelp::annotate() on each image.  Images can be resized, apply different thresholds to the predictions, and get details on the predicted results.
+
+Here is an example of how to use it:
+
+~~~~{.sh}
+DarkHelp barcodetest.cfg barcodetest_final.weights barcodetest.names test_image_1.jpg test_image_2.jpg
+~~~~
+
+Note the parameters:
+
+@li The `.cfg` file used to originally train the neural network.
+@li The `.weights` file that was created as part of the neural network training.
+@li The `.names` file which contains the names of the various classes in the network.
+@li One or more image file (typically `.jpg`, but could be any type of image) against which you want to run the network.
+
+There are at least a dozen possible command-line arguments.  run `%DarkHelp --help` for the full list.  Some examples:
+
+~~~~{.sh}
+# -b means resize the "before" input image prior to calling DarkHelp::predict()
+# -t sets the new lower bound threshold to 25%
+DarkHelp -b 800x800 -t 0.25 barcodetest.cfg barcodetest_final.weights barcodetest.names *.jpg
+
+# -a resizes the "after" output image once DarkHelp::annotate() has been called
+# -s starts the viewer in slideshow mode, where a new image is loaded every second
+DarkHelp -a 640x480 -s barcodetest.cfg barcodetest_final.weights barcodetest.names *.jpg
+~~~~
+
+In addition to command-line arguments, there are several keys you can use in the viewer.  They are:
+
+@li @p q or @p ESC to exit from the viewer.
+@li @p w to write the current image to disk in the current working directory (see @p "output.png")
+@li @p HOME to return to the first image in the data set
+@li @p END to skip to the last image in the data set
+@li @p LEFT go to the previous image
+@li @p UP increase the rate at which images are processed during the slideshow
+@li @p DOWN decrease the rate at which images are processed during the slideshow
+@li @p PAGE-UP increase the threshold
+@li @p PAGE-DOWN decrease the threshold
+@li @p g to toggle greyscale images
+@li @p p to pause or play the slideshow
+
+*/

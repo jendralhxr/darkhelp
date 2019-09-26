@@ -1,0 +1,36 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../src-lib/DarkHelp.hpp
+chrono
+-
+string
+-
+map
+-
+vector
+-
+opencv2/opencv.hpp
+-
+darknet.h
+-
+
+/home/rdx/Projects/darkhelp/src-tool/main.cpp
+DarkHelp.hpp
+-
+chrono
+-
+map
+-
+vector
+-
+string
+-
+tclap/CmdLine.h
+-
+

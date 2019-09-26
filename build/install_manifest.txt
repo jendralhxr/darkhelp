@@ -1,0 +1,4 @@
+/usr/local/include/DarkHelp.hpp
+/usr/local/lib/libdarkhelp.a
+/usr/local/lib/libdarkhelp.so
+/usr/local/bin/DarkHelp

@@ -1,0 +1,1 @@
+/usr/bin/c++ -fPIC -O3 -DNDEBUG  -shared -Wl,-soname,libdarkhelp.so -o libdarkhelp.so CMakeFiles/darkhelp_shared.dir/DarkHelp.cpp.o 
